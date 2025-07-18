@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="map_server" type="map_saver" name="map_saver1" args="-f /home/abyss/catkin_ws/src/rbe3002_lab3/maps/final_demo_map" output="screen">  
+    </node>
+</launch>

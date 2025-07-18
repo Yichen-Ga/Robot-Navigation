@@ -1,0 +1,14 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+
+  <!--gmapping. We don't need mapserver if gmapping is running -->
+  <include file="$(find rbe3002_lab3)/launch/turtlebot3_slam.launch" />
+
+  <!-- AMCL -->
+  <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rbe3002_lab3)/rviz/rbe3002_lab3.rviz"/>
+
+  <node name="lab2" pkg="rbe3002_lab2" type="lab2.py" args="-d $(find rbe3002_lab2)/src/nodes/lab2.py"/>
+
+</launch>
